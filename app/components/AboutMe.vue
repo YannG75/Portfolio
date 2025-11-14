@@ -10,16 +10,21 @@ defineProps({
   hided: Boolean
 })
 
-const clicked = ref(false)
+interface Thing {
+  name: string,
+  description: string
+}
+
+const clicked = ref('')
 
 // Refs pour les lignes du paragraphe About
 const aboutLine1 = ref<HTMLParagraphElement | null>(null)
 const aboutLine2 = ref<HTMLParagraphElement | null>(null)
 const aboutLine3 = ref<HTMLParagraphElement | null>(null)
 
-const changeClicked = (e) => {
+const changeClicked = (e: string) => {
   if (clicked.value === e) {
-    clicked.value = false
+    clicked.value = ''
   }
   else {
     clicked.value = e
@@ -28,7 +33,7 @@ const changeClicked = (e) => {
 
 const emit = defineEmits(['update:hovered', 'update:hided'])
 
-const thingsIdo = ref<object[]>([
+const thingsIdo = ref<Thing[]>([
   {
     name: 'Web Development',
     description: 'I use HTML, CSS, JavaScript, PHP, and more to create websites and web applications.'
@@ -109,9 +114,8 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .text-gradient-scroll {
-  background: linear-gradient(to left, #9ca3af 0%, #9ca3af 50%, var(--ui-primary) 50%, var(--ui-primary) 100%);
+  background: linear-gradient(to left, #9ca3af 0%, #9ca3af 50%, var(--ui-primary) 50%, var(--ui-primary) 100%) 100% 0;
   background-size: 200% 100%;
-  background-position: 100% 0%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
