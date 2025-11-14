@@ -12,7 +12,8 @@
   <a href="#-features">Features</a> •
   <a href="#-getting-started">Getting Started</a> •
   <a href="#-project-structure">Project Structure</a> •
-  <a href="#-roadmap">Roadmap</a>
+
+[//]: # (  <a href="#-roadmap">Roadmap</a>)
 </p>
 
 <p align="center">
