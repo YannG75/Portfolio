@@ -33,6 +33,10 @@ const getBackgroundStyle = (workName: string, workImage: string) => {
   return {}
 }
 
+const changeWork = (workName: string) => {
+  clicked.value = workName === clicked.value ? '' : workName
+}
+
 const works = ref<Work[]>([
   {
     name: 'Pastitalia',
@@ -79,14 +83,14 @@ const works = ref<Work[]>([
 
 <template>
   <section id="works" class="w-full min-h-screen flex flex-col items-center justify-center">
-    <div class="w-[100%] flex flex-col items-start justify-center">
-      <h2 class="text-xl ml-[15%] font-[Sora] font-thin text-gray-400 mb-5">My works</h2>
+    <div class="w-full flex flex-col items-start justify-center">
+      <h2 class="text-xl ml-4 sm:ml-[6%] font-[Sora] font-thin text-gray-400 mb-5">My works</h2>
       <article class="flex flex-col items-start w-full">
         <div
             v-for="work in works"
             ref="target" :key="work.name"
             class="flex h-[100px] cursor-pointer transition-[height] duration-250 relative justify-between items-center w-full mb-5 py-2 group"
-            :class="clicked == work.name ? '!h-[500px] flex-col justify-center gap-10': ''" @click="clicked = work.name"
+            :class="clicked == work.name ? '!h-[400px] sm:!h-[450px] md:!h-[500px] flex-col justify-center gap-10': ''" @click="changeWork( work.name)"
             @mouseover="emit('update:hided', true)" @mouseleave="emit('update:hided', false)">
           <div
               :style="getBackgroundStyle(work.name, work.image)"
@@ -95,18 +99,18 @@ const works = ref<Work[]>([
           />
           <h3
               :class="clicked == work.name ? '!ml-0' : '' "
-              class="font-[Sora] z-10 font-black text-6xl ml-[15%] whitespace-pre-line">
+              class="font-[Sora] z-10 font-black text-3xl sm:text-4xl md:text-6xl ml-4 sm:ml-[6%] whitespace-pre-line">
             {{ work.name }}
           </h3>
           <p
               :class="clicked == work.name ? 'visible !mr-0 !text-center' : '' "
-              class="text-right z-10 mr-[15%] text-[#E5E5E5] whitespace-pre-line invisible group-hover:visible group-focus:visible">
+              class="text-right z-10 mr-4 sm:mr-[10%] md:mr-[15%] text-sm sm:text-base text-[#E5E5E5] whitespace-pre-line invisible group-hover:visible group-focus:visible">
             {{ clicked == work.name && work.accurateDescription ? work.accurateDescription : work.description }}
           </p>
-          <div v-if="clicked == work.name" class="flex gap-5 z-10 justify-center items-center">
-              <a class="bg-[#E5E5E5] font-[sora] text-[#545454] px-5 py-2 rounded-md shadow-xl " :href="work.link" target="_blank">check it out</a>
-              <a v-if="work.github" class="bg-[#E5E5E5] text-[#545454] px-5 py-1 rounded-md shadow-xl" :href="work.github" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+          <div v-if="clicked == work.name" class="flex gap-4 sm:gap-8 md:gap-5 z-10 justify-center items-center">
+              <a class="bg-[#E5E5E5] font-[sora] text-[#545454] text-sm sm:text-base px-4 sm:px-5 py-2 rounded-md shadow-xl " :href="work.link" target="_blank">check it out</a>
+              <a v-if="work.github" class="bg-[#E5E5E5] text-[#545454] px-4 sm:px-5 py-1 rounded-md shadow-xl" :href="work.github" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 24 24">
                   <!-- Icon from Material Design Icons by Pictogrammers - https://github.com/Templarian/MaterialDesign/blob/master/LICENSE -->
                   <path
                       fill="currentColor"

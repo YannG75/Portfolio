@@ -45,7 +45,7 @@ const isActive = (label: string) => {
 <template>
   <!-- Logo -->
   <div
-    class="fixed top-5 left-5 z-10"
+    class="fixed top-4 left-4 sm:top-5 sm:left-5 z-10"
     @mouseenter="changeCursor(true)"
     @mouseleave="changeCursor(false)"
   >
@@ -53,14 +53,14 @@ const isActive = (label: string) => {
       <NuxtImg
         src="/logoPMini.png"
         alt="Logo"
-        class="h-12 w-12 cursor-pointer hover:scale-110 hover:drop-shadow-lg hover:drop-shadow-primary transition-drop-shadow duration-150"
+        class="h-10 w-10 sm:h-12 sm:w-12 cursor-pointer hover:scale-110 hover:drop-shadow-lg hover:drop-shadow-primary transition-drop-shadow duration-150"
       />
     </nuxt-link>
   </div>
 
   <!-- Navigation -->
   <nav
-    class="fixed top-5 right-5 z-10 flex flex-col gap-2"
+    class="fixed top-4 right-4 sm:top-5 sm:right-5 z-10 flex flex-col gap-2"
     @mouseenter="changeCursor(true)"
     @mouseleave="changeCursor(false)"
   >
@@ -68,11 +68,11 @@ const isActive = (label: string) => {
       v-for="item in items"
       :key="item.label"
       :href="`#${item.label.toLowerCase()}`"
-      class="relative group px-4"
+      class="relative group px-3 sm:px-4 min-h-[44px] flex items-center"
     >
       <!-- Texte -->
       <span
-        class="font-medium text-sm transition-colors duration-200"
+        class="font-medium text-base sm:text-sm transition-colors duration-200"
         :class="[
           isActive(item.label)
             ? 'text-primary'

@@ -71,13 +71,13 @@ onBeforeUnmount(() => {
   <FirefliesBackground />
 
   <main
-    class="relative w-[100vw] flex flex-col"
+    class="relative w-full flex flex-col"
     @mousemove="movingEvent"
   >
     <div
       ref="mouseCursor"
-      :class="[hovered ? 'w-10 h-10 cursor-hover' : '', hided ? '!w-0 !h-0 ' : '']"
-      class="absolute pointer-events-none opacity-90 w-7 h-7 z-20 cursor-transition bg-primary duration-150 ease rounded-full border-primary"
+      :class="[hovered ? 'w-8 h-8 sm:w-10 sm:h-10 cursor-hover' : '', hided ? '!w-0 !h-0 ' : '']"
+      class="absolute pointer-events-none opacity-90 w-5 h-5 sm:w-7 sm:h-7 z-20 cursor-transition bg-primary duration-150 ease rounded-full border-primary"
     />
 
     <!-- On passe activeSection à la navigation -->
@@ -87,7 +87,7 @@ onBeforeUnmount(() => {
       @update:hided="hided = $event"
     />
 
-    <NuxtImg src="/profil.png" alt="Hero" class="absolute top-0 left-0 w-[50vw] h-[100vh] object-cover z-0" />
+    <NuxtImg src="/profil.png" alt="Hero" class="hidden md:block absolute top-0 left-0 md:w-[50vw] md:h-[100vh] object-cover z-0" />
 
     <!-- Hero -->
     <section id="hero" ref="heroRef">

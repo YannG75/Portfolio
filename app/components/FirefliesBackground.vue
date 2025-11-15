@@ -3,8 +3,12 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { gsap } from 'gsap'
 
 const firefliesContainer = ref<HTMLDivElement | null>(null)
-const numberOfFireflies = 20
 const fireflies = ref<HTMLDivElement[]>([])
+
+// Adapter le nombre de lucioles selon la taille de l'écran
+const getNumberOfFireflies = () => {
+  return window.innerWidth > 768 ? 20 : 8
+}
 
 const createFirefly = (index: number) => {
   const firefly = document.createElement('div')
@@ -14,12 +18,16 @@ const createFirefly = (index: number) => {
   const startX = Math.random() * window.innerWidth
   const startY = Math.random() * window.innerHeight
 
+  // Taille adaptée pour mobile (légèrement plus grande pour visibilité)
+  const isMobile = window.innerWidth <= 768
+  const size = isMobile ? Math.random() * 3 + 3 : Math.random() * 4 + 2
+
   firefly.style.cssText = `
     position: absolute;
     left: ${startX}px;
     top: ${startY}px;
-    width: ${Math.random() * 4 + 2}px;
-    height: ${Math.random() * 4 + 2}px;
+    width: ${size}px;
+    height: ${size}px;
     background: var(--ui-primary);
     border-radius: 50%;
     box-shadow: 0 0 ${Math.random() * 10 + 5}px var(--ui-primary);
@@ -56,27 +64,52 @@ const animateFirefly = (firefly: HTMLDivElement) => {
   })
 }
 
-onMounted(() => {
-  if (firefliesContainer.value) {
-    // Créer et animer les lucioles
-    for (let i = 0; i < numberOfFireflies; i++) {
-      const firefly = createFirefly(i)
-      fireflies.value.push(firefly)
-      firefliesContainer.value.appendChild(firefly)
+const initFireflies = () => {
+  if (!firefliesContainer.value) return
 
-      // Démarrer l'animation après un délai aléatoire
-      setTimeout(() => {
-        animateFirefly(firefly)
-      }, Math.random() * 2000)
-    }
+  // Nettoyer les lucioles existantes
+  fireflies.value.forEach(firefly => {
+    gsap.killTweensOf(firefly)
+    firefly.remove()
+  })
+  fireflies.value = []
+
+  // Créer et animer les lucioles avec nombre adapté à l'écran
+  const numberOfFireflies = getNumberOfFireflies()
+  for (let i = 0; i < numberOfFireflies; i++) {
+    const firefly = createFirefly(i)
+    fireflies.value.push(firefly)
+    firefliesContainer.value.appendChild(firefly)
+
+    // Démarrer l'animation après un délai aléatoire
+    setTimeout(() => {
+      animateFirefly(firefly)
+    }, Math.random() * 2000)
   }
+}
+
+let resizeTimeout: number | null = null
+
+const handleResize = () => {
+  // Débounce pour éviter trop de recalculs
+  if (resizeTimeout) clearTimeout(resizeTimeout)
+  resizeTimeout = window.setTimeout(() => {
+    initFireflies()
+  }, 300)
+}
+
+onMounted(() => {
+  initFireflies()
+  window.addEventListener('resize', handleResize)
 })
 
 onBeforeUnmount(() => {
-  // Nettoyer les animations GSAP
+  // Nettoyer les animations GSAP et les event listeners
   fireflies.value.forEach(firefly => {
     gsap.killTweensOf(firefly)
   })
+  window.removeEventListener('resize', handleResize)
+  if (resizeTimeout) clearTimeout(resizeTimeout)
 })
 </script>
 
