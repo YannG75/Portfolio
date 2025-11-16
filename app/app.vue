@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import Navigation from '~/components/Navigation.vue'
-import Hero from '~/components/Hero.vue'
-import AboutMe from '~/components/AboutMe.vue'
-import Works from '~/components/Works.vue'
-import Contact from '~/components/Contact.vue'
+import BlocNavigation from '~/components/BlocNavigation.vue'
+import BlocHero from '~/components/BlocHero.vue'
+import BlocAboutMe from '~/components/BlocAboutMe.vue'
+import BlocWorks from '~/components/BlocWorks.vue'
+import BlocContact from '~/components/BlocContact.vue'
 import FirefliesBackground from '~/components/FirefliesBackground.vue'
 
 type SectionKey = 'hero' | 'about' | 'works' | 'contact'
@@ -81,18 +81,18 @@ onBeforeUnmount(() => {
     />
 
     <!-- On passe activeSection à la navigation -->
-    <Navigation
+    <BlocNavigation
       :hided="hided"
       :active-section="activeSection"
       @update:hided="hided = $event"
     />
 
-    <NuxtImg src="/profil.png" alt="Hero" class="hidden md:block absolute top-0 left-0 md:w-[50vw] md:h-[100vh] object-cover z-0" />
+    <NuxtImg src="assets/images/profil.png" alt="Hero" class="hidden md:block absolute top-0 left-0 md:w-[50vw] md:h-[100vh] object-cover z-0" />
 
-    <!-- Hero -->
+    <!-- BlocHero -->
     <section id="hero" ref="heroRef">
 
-      <Hero
+      <BlocHero
         :hovered="hovered"
         @update:hovered="hovered = $event"
       />
@@ -100,7 +100,7 @@ onBeforeUnmount(() => {
 
     <!-- About -->
     <section id="about" ref="aboutRef">
-      <AboutMe
+      <BlocAboutMe
         :hovered="hovered"
         :hided="hided"
         @update:hovered="hovered = $event"
@@ -108,9 +108,9 @@ onBeforeUnmount(() => {
       />
     </section>
 
-    <!-- Works -->
+    <!-- BlocWorks -->
     <section id="works" ref="worksRef">
-      <Works
+      <BlocWorks
         :hovered="hovered"
         :hided="hided"
         @update:hovered="hovered = $event"
@@ -118,9 +118,9 @@ onBeforeUnmount(() => {
       />
     </section>
 
-    <!-- Contact -->
+    <!-- BlocContact -->
     <section id="contact" ref="contactRef">
-      <Contact
+      <BlocContact
         :hovered="hovered"
         :hided="hided"
         @update:hovered="hovered = $event"

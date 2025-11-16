@@ -51,14 +51,14 @@ const isActive = (label: string) => {
   >
     <nuxt-link :to="{hash:'#hero'}" :external="true" class="flex items-center justify-center cursor-none">
       <NuxtImg
-        src="/logoPMini.png"
+        src="assets/images//logoPMini.png"
         alt="Logo"
         class="h-10 w-10 sm:h-12 sm:w-12 cursor-pointer hover:scale-110 hover:drop-shadow-lg hover:drop-shadow-primary transition-drop-shadow duration-150"
       />
     </nuxt-link>
   </div>
 
-  <!-- Navigation -->
+  <!-- BlocNavigation -->
   <nav
     class="fixed top-4 right-4 sm:top-5 sm:right-5 z-10 flex flex-col gap-2"
     @mouseenter="changeCursor(true)"
