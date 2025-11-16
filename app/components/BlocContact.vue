@@ -20,7 +20,7 @@ const mottoLine3 = ref<HTMLParagraphElement | null>(null)
 onMounted(() => {
   const lines = [mottoLine1.value, mottoLine2.value, mottoLine3.value]
 
-  lines.forEach((line, index) => {
+  lines.forEach((line) => {
     if (line) {
       gsap.fromTo(line,
         {
@@ -79,9 +79,8 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .text-gradient-hover {
-  background: linear-gradient(to left, #9ca3af 0%, #9ca3af 50%, var(--ui-primary) 50%, var(--ui-primary) 100%);
+  background: linear-gradient(to left, #9ca3af 0%, #9ca3af 50%, var(--ui-primary) 50%, var(--ui-primary) 100%) 100% 0;
   background-size: 200% 100%;
-  background-position: 100% 0%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -89,13 +88,12 @@ onBeforeUnmount(() => {
 }
 
 .group:hover .text-gradient-hover {
-  background-position: 0% 0%;
+  background-position: 0 0;
 }
 
 .text-gradient-scroll {
-  background: linear-gradient(to left, #9ca3af 0%, #9ca3af 50%, var(--ui-primary) 50%, var(--ui-primary) 100%);
+  background: linear-gradient(to left, #9ca3af 0%, #9ca3af 50%, var(--ui-primary) 50%, var(--ui-primary) 100%) 100% 0;
   background-size: 200% 100%;
-  background-position: 100% 0%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

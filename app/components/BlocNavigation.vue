@@ -76,7 +76,7 @@ const isActive = (label: string) => {
         :class="[
           isActive(item.label)
             ? 'text-primary'
-            : 'text-gray-800 dark:text-white',
+            : 'text-white',
           'group-hover:text-primary'
         ]"
       >
