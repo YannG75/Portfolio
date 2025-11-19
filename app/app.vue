@@ -141,5 +141,10 @@ onBeforeUnmount(() => {
           @update:hided="hided = $event"
       />
     </section>
+
+    <article class="fixed z-20 left-[50%] translate-x-[-50%] bottom-5 flex flex-col lg:invisible items-center justify-center min-w-10 min-h-10 bg-blur-sm" >
+      <NuxtImg src="assets/icons/touch.svg" alt="tap things" class="w-8 h-8 md:w-12 md:h-12 mt-2 animate-pulse"/>
+      <span class="text-xs md:text-sm text-center animate-pulse">tap things</span>
+    </article>
   </main>
 </template>

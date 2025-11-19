@@ -89,7 +89,7 @@ const works = ref<Work[]>([
         <div
             v-for="work in works"
             ref="target" :key="work.name"
-            class="flex h-[100px] cursor-pointer transition-[height] duration-250 relative justify-between items-center w-full mb-5 py-2 group"
+            class="flex h-[100px] cursor-pointer transition-[height] duration-300 relative justify-between items-center w-full mb-5 py-2 group"
             :class="clicked == work.name ? '!h-[400px] sm:!h-[450px] md:!h-[500px] flex-col justify-center gap-10': ''" @click="changeWork( work.name)"
             @mouseover="emit('update:hided', true)" @mouseleave="emit('update:hided', false)">
           <div
