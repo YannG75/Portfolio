@@ -26,7 +26,11 @@ let observer: IntersectionObserver | null = null
 
 function movingEvent(e: MouseEvent) {
   if (mouseCursor.value) {
-    mouseCursor.value.style.transform = `translate(${e.pageX - 10}px, ${e.pageY - 7}px)`
+    const x = e.clientX - 10
+    const y = e.clientY - 7
+    const t = `translate3d(${x}px, ${y}px, 0)`
+    mouseCursor.value.style.transform = t
+    mouseCursor.value.style.setProperty('-webkit-transform', t)
   }
 }
 
