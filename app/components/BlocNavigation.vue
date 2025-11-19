@@ -45,7 +45,7 @@ const isActive = (label: string) => {
 <template>
   <!-- Logo -->
   <div
-    class="fixed top-4 left-4 sm:top-5 sm:left-5 z-10"
+    class="fixed top-4 left-4 sm:top-5 sm:left-5 z-20"
     @mouseenter="changeCursor(true)"
     @mouseleave="changeCursor(false)"
   >
@@ -60,7 +60,7 @@ const isActive = (label: string) => {
 
   <!-- BlocNavigation -->
   <nav
-    class="fixed top-4 right-4 sm:top-5 sm:right-5 z-10 flex flex-col gap-2"
+    class="fixed top-4 right-4 sm:top-5 sm:right-5 z-20 flex flex-col gap-2"
     @mouseenter="changeCursor(true)"
     @mouseleave="changeCursor(false)"
   >
@@ -68,7 +68,8 @@ const isActive = (label: string) => {
       v-for="item in items"
       :key="item.label"
       :href="`#${item.label.toLowerCase()}`"
-      class="relative group px-3 sm:px-4 min-h-[44px] flex items-center"
+      class="relative group px-3 sm:px-4 min-h-[30px] flex items-center"
+      :class="[isActive(item.label) ? 'bg-[rgba(0,0,0,0.2)]' : '']"
     >
       <!-- Texte -->
       <span

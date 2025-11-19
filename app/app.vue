@@ -32,8 +32,14 @@ onMounted(() => {
 
   window.addEventListener("mousemove", (e) => {
     if (!mouseCursor.value) return
-    xTo(e.clientX - 10)
-    yTo(e.clientY - 7)
+    if (hovered.value) {
+      xTo(e.clientX - 20)
+      yTo(e.clientY - 20)
+    }
+    else {
+      xTo(e.clientX - 10)
+      yTo(e.clientY - 7)
+    }
   })
 
   const options: IntersectionObserverInit = {
@@ -82,7 +88,7 @@ onBeforeUnmount(() => {
     <div
       ref="mouseCursor"
       :class="[hovered ? 'w-8 h-8 sm:w-10 sm:h-10 cursor-hover' : '', hided ? '!w-0 !h-0 ' : '']"
-      class="absolute pointer-events-none opacity-90 w-5 h-5 sm:w-7 sm:h-7 z-20 cursor-transition bg-primary duration-150 ease rounded-full border-primary"
+      class="fixed pointer-events-none opacity-90 w-5 h-5 sm:w-7 sm:h-7 z-20 cursor-transition bg-primary duration-150 ease rounded-full border-primary"
     />
 
     <!-- On passe activeSection à la navigation -->
