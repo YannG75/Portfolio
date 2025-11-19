@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import gsap from 'gsap'
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import BlocNavigation from '~/components/BlocNavigation.vue'
 import BlocHero from '~/components/BlocHero.vue'
@@ -24,17 +25,17 @@ const contactRef = ref<HTMLElement | null>(null)
 
 let observer: IntersectionObserver | null = null
 
-function movingEvent(e: MouseEvent) {
-  if (mouseCursor.value) {
-    const x = e.clientX - 10
-    const y = e.clientY - 7
-    const t = `translate3d(${x}px, ${y}px, 0)`
-    mouseCursor.value.style.transform = t
-    mouseCursor.value.style.setProperty('-webkit-transform', t)
-  }
-}
-
 onMounted(() => {
+  // xSetter et ySetter sont des fonctions optimisées créées par GSAP
+  const xTo = gsap.quickSetter(mouseCursor.value, "x", "px")
+  const yTo = gsap.quickSetter(mouseCursor.value, "y", "px")
+
+  window.addEventListener("mousemove", (e) => {
+    if (!mouseCursor.value) return
+    xTo(e.clientX - 10)
+    yTo(e.clientY - 7)
+  })
+
   const options: IntersectionObserverInit = {
     root: null,
     threshold: 0.4, // ~40 % visible pour être marqué comme actif
@@ -67,6 +68,7 @@ onBeforeUnmount(() => {
     observer.disconnect()
     observer = null
   }
+  window.removeEventListener("mousemove", () => {})
 })
 </script>
 
@@ -76,7 +78,6 @@ onBeforeUnmount(() => {
 
   <main
     class="relative w-full flex flex-col"
-    @mousemove="movingEvent"
   >
     <div
       ref="mouseCursor"
