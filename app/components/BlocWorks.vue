@@ -95,7 +95,7 @@ const works = ref<Work[]>([
           <div
               :style="getBackgroundStyle(work.name, work.image)"
               :class="clicked == work.name ? 'h-full' : 'bg-primary'"
-              class="opacity-90 absolute w-full h-0 group-hover:h-full group-focus:h-full transition-[height] duration-300 z-0 ease-in-out"
+              class="opacity-90 absolute w-full h-0 lg:group-hover:h-full transition-[height] duration-300 z-0 ease-in-out"
           />
           <h3
               :class="clicked == work.name ? '!ml-0' : '' "
@@ -104,7 +104,7 @@ const works = ref<Work[]>([
           </h3>
           <p
               :class="clicked == work.name ? 'visible !mr-0 !text-center' : '' "
-              class="text-right z-10 mr-4 sm:mr-[10%] md:mr-[15%] text-sm sm:text-base text-[#E5E5E5] whitespace-pre-line invisible group-hover:visible group-focus:visible">
+              class="text-right z-10 mr-4 sm:mr-[10%] md:mr-[15%] text-sm sm:text-base text-[#E5E5E5] whitespace-pre-line invisible lg:group-hover:visible">
             {{ clicked == work.name && work.accurateDescription ? work.accurateDescription : work.description }}
           </p>
           <div v-if="clicked == work.name" class="flex gap-4 sm:gap-8 md:gap-5 z-10 justify-center items-center">

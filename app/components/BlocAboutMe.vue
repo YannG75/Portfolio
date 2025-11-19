@@ -103,7 +103,7 @@ onBeforeUnmount(() => {
       <h2 class="text-xl font-[Sora] ml-4 sm:ml-[7%] lg:ml-[6%] font-thin text-gray-400 mb-5">WHAT I DO</h2>
       <article class="flex flex-col items-start w-full">
         <div v-for="thing in thingsIdo" :key="thing.name" class="flex flex-col lg:flex-row min-h-[120px] relative justify-between items-center w-full py-4 sm:py-2 gap-2 lg:gap-4 group overflow-hidden" @click="changeClicked(thing.name)" @mouseover="emit('update:hided', true)" @mouseleave="emit('update:hided', false)" >
-          <div :class="clicked == thing.name ? 'h-full' : ''" class="bg-primary opacity-90 absolute w-full h-0 group-hover:h-full transition-[height] duration-300 z-0 ease-in-out" />
+          <div :class="clicked == thing.name ? 'h-full' : ''" class="bg-primary opacity-90 absolute w-full h-0 md:group-hover:h-full transition-[height] duration-300 z-0 ease-in-out" />
           <h3 class="font-[Sora] font-black ml-10 sm:ml-[7%] md:ml-[15%] lg:ml-[6%] text-3xl sm:text-4xl md:text-5xl lg:whitespace-pre-line z-10 w-full lg:w-1/3">{{thing.name}}</h3>
           <p :class="clicked == thing.name ? 'visible' : ''" class="text-left  lg:text-right text-sm sm:text-base text-[#E5E5E5] break-after-auto ml-5 sm:ml-[10%] md:ml-[15%] lg:mr-[15%] w-[92%] md:w-full lg:w-1/4 invisible sm:group-hover:visible sm:group-focus:visible z-10">{{thing.description}}</p>
         </div>
