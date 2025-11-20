@@ -55,7 +55,7 @@ onBeforeUnmount(() => {
       <p
           ref="mottoLine1"
           class="text-gradient-scroll font-bold text-2xl sm:text-3xl md:text-5xl leading-snug w-full sm:w-[90%] text-center">
-        I'm Doing what I know
+        I Do what I know
       </p>
       <p
           ref="mottoLine2"
@@ -65,7 +65,7 @@ onBeforeUnmount(() => {
       <p
           ref="mottoLine3"
           class="text-gradient-scroll font-bold text-2xl sm:text-3xl md:text-5xl leading-snug w-full sm:w-[90%] text-center">
-        I'm learning what I don't know.
+        I learn what I don't.
       </p>
     </div>
     <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-400 mb-10 text-center px-4">Feel free to reach out
