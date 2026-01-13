@@ -61,6 +61,19 @@ const works = ref<Work[]>([
     link: 'https://busterwood.com'
   },
   {
+    name: 'Road To The Main Stage By Firestone',
+    image: 'firestone.png',
+    description: 'The website of the road to the main stage by Firestone event of 2024.',
+    accurateDescription: `Road to the Main Stage is an event organized by Firestone in partnership with Deezer,
+      giving upcoming artists the opportunity to perform on major stages.
+
+      The website is built with WordPress, featuring custom CSS to match the brand's identity
+      and responsive design. I worked on two editions of this project, handling maintenance,
+      updates, and visual customizations.`,
+    technos: ['wordpress', 'CSS'],
+    link: 'https://roadtothemainstagebyfirestone.withdeezer.com/fr/'
+  },
+  {
     name: 'Weather App',
     image: 'weather.png',
     description: `A simple weather application that provides
@@ -89,8 +102,9 @@ const works = ref<Work[]>([
         <div
             v-for="work in works"
             ref="target" :key="work.name"
-            class="flex h-[100px] cursor-pointer transition-[height] duration-300 relative justify-between items-center w-full mb-5 py-2 group"
-            :class="clicked == work.name ? '!h-[400px] sm:!h-[450px] md:!h-[500px] flex-col justify-center gap-10': ''" @click="changeWork( work.name)"
+            class="flex h-[150px]  cursor-pointer transition-[height] duration-300 relative justify-between items-center w-full mb-5 py-2 group"
+            :class="clicked == work.name ? '!h-[400px] sm:!h-[450px] md:!h-[500px] flex-col justify-center gap-10': ''"
+            @click="changeWork( work.name)"
             @mouseover="emit('update:hided', true)" @mouseleave="emit('update:hided', false)">
           <div
               :style="getBackgroundStyle(work.name, work.image)"
@@ -108,10 +122,15 @@ const works = ref<Work[]>([
             {{ clicked == work.name && work.accurateDescription ? work.accurateDescription : work.description }}
           </p>
           <div v-if="clicked == work.name" class="flex gap-4 sm:gap-8 md:gap-5 z-10 justify-center items-center">
-              <a class="bg-[#E5E5E5] font-[sora] text-[#545454] text-sm sm:text-base px-4 sm:px-5 py-2 rounded-md shadow-xl " :href="work.link" target="_blank">check it out</a>
-              <a v-if="work.github" class="bg-[#E5E5E5] text-[#545454] px-4 sm:px-5 py-1 rounded-md shadow-xl" :href="work.github" target="_blank">
-                <NuxtImg src="/assets/icons/github.svg" alt="github logo" class="w-5 h-5 sm:w-6 sm:h-6" />
-              </a>
+            <a
+                class="bg-[#E5E5E5] font-[sora] text-[#545454] text-sm sm:text-base px-4 sm:px-5 py-2 rounded-md shadow-xl "
+                :href="work.link" target="_blank">check it out</a>
+            <a
+                v-if="work.github"
+                class="bg-[#E5E5E5] text-[#545454] px-4 sm:px-5 py-1 rounded-md shadow-xl"
+                :href="work.github" target="_blank">
+              <NuxtImg src="/assets/icons/github.svg" alt="github logo" class="w-5 h-5 sm:w-6 sm:h-6"/>
+            </a>
           </div>
 
         </div>

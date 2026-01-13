@@ -86,7 +86,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section id="about" class="w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black from-1% to-transparent bg-blur-sm">
+  <section id="about" class="w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black from-1% to-transparent bg-blur-sm mb-20 2xl:mb-0">
     <div class="w-full px-4 sm:px-6 md:w-[90%] flex flex-col items-start justify-center mb-20">
       <h2 class="text-xl font-thin font-[Sora] text-gray-400 mb-5">ABOUT ME</h2>
       <p ref="aboutLine1" class="text-gradient-scroll font-bold text-2xl sm:text-3xl md:text-5xl leading-snug w-full sm:w-[90%]">
