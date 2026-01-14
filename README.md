@@ -1,12 +1,12 @@
-<h1 align="center">
+<h1 style="text-align:center">
   <br>
   Portfolio - Yann Grillon
   <br>
 </h1>
 
-<h4 align="center">A modern, minimalist portfolio built with cutting-edge web technologies</h4>
+<h4 style="text-align:center">A modern, minimalist portfolio built with cutting-edge web technologies</h4>
 
-<p align="center">
+<p style="text-align:center">
   <a href="#-about">About</a> •
   <a href="#-tech-stack">Tech Stack</a> •
   <a href="#-features">Features</a> •
@@ -16,7 +16,7 @@
 [//]: # (  <a href="#-roadmap">Roadmap</a>)
 </p>
 
-<p align="center">
+<p style="text-align:center">
 
   <img src="https://img.shields.io/badge/Nuxt-4.1.2-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white" alt="Nuxt">
   <img src="https://img.shields.io/badge/Vue-3.5.21-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white" alt="Vue">
@@ -196,12 +196,12 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Yann Grillon**
 
-- Portfolio: Soon
+- Portfolio: https://yanng.xyz
 - GitHub: [@YannG75](https://github.com/YannG75)
 - LinkedIn: [Yann G](https://www.linkedin.com/in/yann-grillon/)
 
 ---
 
-<p align="center">
+<p style="text-align:center">
   Made with ❤️ using Nuxt 4, Vue 3, and GSAP
 </p>
