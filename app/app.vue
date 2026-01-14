@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import gsap from 'gsap'
 import {ref, onMounted, onBeforeUnmount} from 'vue'
 import BlocNavigation from '~/components/BlocNavigation.vue'
@@ -7,6 +8,23 @@ import BlocAboutMe from '~/components/BlocAboutMe.vue'
 import BlocWorks from '~/components/BlocWorks.vue'
 import BlocContact from '~/components/BlocContact.vue'
 import FirefliesBackground from '~/components/FirefliesBackground.vue'
+
+useHead({
+  title: 'Yann\'s Portfolio',
+  htmlAttrs: {
+    lang: 'en'
+  },
+  meta: [
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1',
+    },
+    {
+      name: 'description',
+      content: 'This is my amazing portfolio, where i share my project and some things about me',
+    }
+  ]
+})
 
 type SectionKey = 'hero' | 'about' | 'works' | 'contact'
 
@@ -100,8 +118,9 @@ onBeforeUnmount(() => {
         @update:hided="hided = $event"
     />
 
-    <NuxtImg src="assets/images/profil.png" alt="Hero"
-             class="hidden md:block absolute top-0 left-0 md:w-[50vw] md:h-[100vh] object-cover z-0"/>
+    <NuxtImg
+        src="assets/images/profil.png" alt="Hero"
+        class="hidden md:block absolute top-0 left-0 md:w-[50vw] md:h-[100vh] object-cover z-0"/>
 
     <!-- BlocHero -->
     <section id="hero" ref="heroRef">
