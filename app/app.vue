@@ -119,7 +119,7 @@ onBeforeUnmount(() => {
     />
 
     <NuxtImg
-        src="/assets/images/Profil.png" alt="Hero"
+        src="/assets/images/profil.png" alt="Hero"
         class="hidden md:block absolute top-0 left-0 md:w-[50vw] md:h-[100vh] object-cover z-0"/>
 
     <!-- BlocHero -->
