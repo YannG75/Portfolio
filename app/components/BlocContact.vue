@@ -68,6 +68,21 @@ onBeforeUnmount(() => {
         I learn what I don't.
       </p>
     </div>
+    <div class="w-full flex flex-col items-center justify-center mb-20">
+      <NuxtImg
+          src="assets/icons/touch.svg" alt="tap things"
+          class="w-8 h-8 md:w-12 md:h-12 animate-pulse transform rotate-180"/>
+      <a
+          href="https://game.yanng.xyz"
+          target="_blank"
+          class="group"
+      >
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient-hover">Check out my little Game</h2>
+      </a>
+
+    </div>
+
+
     <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-400 mb-10 text-center px-4">Feel free to reach out
       to me</h2>
     <div

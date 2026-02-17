@@ -51,7 +51,7 @@ const isActive = (label: string) => {
   >
     <nuxt-link :to="{hash:'#hero'}" :external="true" class="flex items-center justify-center cursor-none">
       <NuxtImg
-        src="assets/images//logoPMini.png"
+        src="/assets/images/logoPMini.png"
         alt="Logo"
         class="h-10 w-10 sm:h-12 sm:w-12 cursor-pointer hover:scale-110 hover:drop-shadow-lg hover:drop-shadow-primary transition-drop-shadow duration-150"
       />
