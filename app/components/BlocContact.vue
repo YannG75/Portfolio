@@ -68,7 +68,10 @@ onBeforeUnmount(() => {
         I learn what I don't.
       </p>
     </div>
-    <div class="w-full flex flex-col items-center justify-center mb-20">
+    <div
+        class="w-full flex flex-col items-center justify-center mb-20"
+        @mouseover="emit('update:hided', true)" @mouseleave="emit('update:hided', false)"
+    >
       <NuxtImg
           src="assets/icons/touch.svg" alt="tap things"
           class="w-8 h-8 md:w-12 md:h-12 animate-pulse transform rotate-180"/>
