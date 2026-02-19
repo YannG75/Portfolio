@@ -68,9 +68,7 @@ onBeforeUnmount(() => {
         I learn what I don't.
       </p>
     </div>
-    <div
-        class="w-full flex flex-col items-center justify-center mb-20"
-        @mouseover="emit('update:hided', true)" @mouseleave="emit('update:hided', false)"
+    <div class="w-full flex flex-col items-center justify-center mb-20"
     >
       <NuxtImg
           src="assets/icons/touch.svg" alt="tap things"
@@ -80,7 +78,10 @@ onBeforeUnmount(() => {
           target="_blank"
           class="group"
       >
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient-hover">Check out my little Game</h2>
+        <h2
+            class="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient-hover"
+            @mouseover="emit('update:hided', true)" @mouseleave="emit('update:hided', false)"
+        >Check out my little Game</h2>
       </a>
 
     </div>
