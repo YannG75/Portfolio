@@ -120,7 +120,12 @@ onBeforeUnmount(() => {
 
     <NuxtImg
         src="/assets/images/profil.png" alt="Hero"
-        class="hidden md:block absolute top-0 left-0 md:w-[50vw] md:h-[100vh] object-cover z-0"/>
+        class="hidden md:block absolute top-0 left-0 md:w-[50vw] md:h-[100vh] object-cover z-0"
+        loading="lazy"
+        format="webp"
+        quality="80"
+        sizes="(min-width: 768px) 50vw"
+    />
 
     <!-- BlocHero -->
     <section id="hero" ref="heroRef">

@@ -7,7 +7,7 @@ const fireflies = ref<HTMLDivElement[]>([])
 
 // Adapter le nombre de lucioles selon la taille de l'écran
 const getNumberOfFireflies = () => {
-  return window.innerWidth > 768 ? 20 : 8
+  return window.innerWidth > 768 ? 20 : 5
 }
 
 const createFirefly = (index: number) => {
@@ -122,6 +122,12 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .firefly {
-  filter: blur(1px);
+  filter: blur(0.5px);
+}
+
+@media (max-width: 768px) {
+  .firefly {
+    filter: none;
+  }
 }
 </style>

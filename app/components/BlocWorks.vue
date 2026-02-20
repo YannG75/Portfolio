@@ -97,7 +97,7 @@ const works = ref<Work[]>([
 <template>
   <section id="works" class="w-full min-h-screen flex flex-col items-center justify-center">
     <div class="w-full flex flex-col items-start justify-center">
-      <h2 class="text-xl ml-4 sm:ml-[6%] font-[Sora] font-thin text-gray-400 mb-5">My works</h2>
+      <h2 class="text-xl ml-4 sm:ml-[6%] font-['Sora_Variable'] font-thin text-gray-400 mb-5">My works</h2>
       <article class="flex flex-col items-start w-full">
         <div
             v-for="work in works"
@@ -113,7 +113,7 @@ const works = ref<Work[]>([
           />
           <h3
               :class="clicked == work.name ? '!ml-0' : '' "
-              class="font-[Sora] z-10 font-black text-3xl sm:text-4xl md:text-6xl ml-4 sm:ml-[6%] whitespace-pre-line">
+              class="font-['Sora_Variable'] z-10 font-black text-3xl sm:text-4xl md:text-6xl ml-4 sm:ml-[6%] whitespace-pre-line">
             {{ work.name }}
           </h3>
           <p
@@ -123,7 +123,7 @@ const works = ref<Work[]>([
           </p>
           <div v-if="clicked == work.name" class="flex gap-4 sm:gap-8 md:gap-5 z-10 justify-center items-center">
             <a
-                class="bg-[#E5E5E5] font-[sora] text-[#545454] text-sm sm:text-base px-4 sm:px-5 py-2 rounded-md shadow-xl "
+                class="bg-[#E5E5E5] font-['Sora_Variable'] text-[#545454] text-sm sm:text-base px-4 sm:px-5 py-2 rounded-md shadow-xl "
                 :href="work.link" target="_blank">check it out</a>
             <a
                 v-if="work.github"
