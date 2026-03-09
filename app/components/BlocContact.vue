@@ -32,8 +32,8 @@ onMounted(() => {
             ease: 'power2.out',
             scrollTrigger: {
               trigger: line,
-              start: 'top 80%',
-              end: 'top 40%',
+              start: 'top 50%',
+              end: 'top 35%',
               scrub: 1,
               toggleActions: 'play none none reverse'
             }
