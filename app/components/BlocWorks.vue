@@ -40,7 +40,7 @@ const changeWork = (workName: string) => {
 const works = ref<Work[]>([
   {
     name: 'Pastitalia',
-    image: 'pastitalia.png',
+    image: 'pastitalia.webp',
     description: `Pastitalia is a website for an Italian restaurant based in
         New York. It features the menu, location, and contact information.`,
     accurateDescription: `It's a website for an italian restaurant
@@ -51,7 +51,7 @@ const works = ref<Work[]>([
   },
   {
     name: 'Busterwood',
-    image: 'busterwood.png',
+    image: 'busterwood.webp',
     description: `A creative website that presents what Busterwood
         is all about and what they do.`,
     accurateDescription: `A creative website that presents Busterwood as a creative agency that specializes
@@ -62,7 +62,7 @@ const works = ref<Work[]>([
   },
   {
     name: 'Road To The Main Stage By Firestone',
-    image: 'firestone.png',
+    image: 'firestone.webp',
     description: 'The website of the road to the main stage by Firestone event of 2024.',
     accurateDescription: `Road to the Main Stage is an event organized by Firestone in partnership with Deezer,
       giving upcoming artists the opportunity to perform on major stages.
@@ -75,7 +75,7 @@ const works = ref<Work[]>([
   },
   {
     name: 'Weather App',
-    image: 'weather.png',
+    image: 'weather.webp',
     description: `A simple weather application that provides
         current weather information based on provided location name.`,
     technos: ['HTML', 'CSS', 'JavaScript', 'React', 'OpenWeatherMap API'],
@@ -84,7 +84,7 @@ const works = ref<Work[]>([
   },
   {
     name: 'todoApp',
-    image: 'todo.png',
+    image: 'todo.webp',
     description: `A simple todo application that allows you to
         create, edit, delete tasks and mark them as completed.`,
     technos: ['HTML', 'CSS', 'JavaScript', 'React'],
