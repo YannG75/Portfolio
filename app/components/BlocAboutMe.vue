@@ -35,21 +35,20 @@ const emit = defineEmits(['update:hovered', 'update:hided'])
 
 const thingsIdo = ref<Thing[]>([
   {
-    name: 'Web Development',
-    description: 'I use HTML, CSS, JavaScript, PHP, and more to create websites and web applications.'
+    name: 'Développement Web',
+    description: 'Je crée des sites et applications web avec HTML, CSS, JavaScript, PHP et bien plus.'
   },
   {
     name: 'Snapchat Lens',
-    description: 'I can create interactive Snapchat Lens filters and effects using Lens Studio.'
+    description: 'Je conçois des filtres et effets Snapchat interactifs avec Lens Studio.'
   },
   {
-    name: `AR
-    experiences`,
+    name: `Expériences AR`,
     description: 'Je conçois des expériences AR immersives sur mobile.'
   },
   {
-    name: 'AI',
-    description: 'I use AI to help me build faster and find better solutions.'
+    name: 'IA',
+    description: "J'utilise l'IA pour aller plus vite et trouver de meilleures solutions."
   },
 ])
 
@@ -124,7 +123,7 @@ onBeforeUnmount(() => {
       id="about"
       class="w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black from-1% to-transparent bg-blur-sm mb-20 2xl:mb-0">
     <div ref="aboutContainer" class="w-full px-4 sm:px-6 md:w-[90%] flex flex-col items-start justify-center mb-20">
-      <h2 class="text-xl font-thin font-['Sora_Variable'] text-gray-400 mb-5">ABOUT ME</h2>
+      <h2 class="text-xl font-thin font-['Sora_Variable'] text-gray-400 mb-5">À PROPOS</h2>
       <p
           ref="aboutP1"
           class="text-gradient-scroll font-bold text-2xl sm:text-3xl md:text-5xl leading-snug w-full sm:w-[90%]">
@@ -140,7 +139,7 @@ onBeforeUnmount(() => {
         Disponible pour missions freelance en Île-de-France et remote.</p>
     </div>
     <div class="w-full flex flex-col items-start justify-center">
-      <h2 class="text-xl font-['Sora_Variable'] ml-4 sm:ml-[7%] lg:ml-[6%] font-thin text-gray-400 mb-5">WHAT I DO</h2>
+      <h2 class="text-xl font-['Sora_Variable'] ml-4 sm:ml-[7%] lg:ml-[6%] font-thin text-gray-400 mb-5">CE QUE JE FAIS</h2>
       <article class="flex flex-col items-start w-full">
         <div
             v-for="thing in thingsIdo" :key="thing.name"

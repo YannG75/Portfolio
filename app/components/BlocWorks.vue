@@ -41,43 +41,31 @@ const works = ref<Work[]>([
   {
     name: 'Pastitalia',
     image: 'pastitalia.webp',
-    description: `Pastitalia is a website for an Italian restaurant based in
-        New York. It features the menu, location, and contact information.`,
-    accurateDescription: `It's a website for an italian restaurant
-        based in New York. It is entirely made with HTML, CSS, and JavaScript
-        and the content is managed with the wordpress CMS.`,
+    description: `Site vitrine pour un restaurant italien basé à New York. Menu, localisation et contact.`,
+    accurateDescription: `Site vitrine pour un restaurant italien basé à New York. Entièrement réalisé en HTML, CSS et JavaScript, avec un contenu géré via WordPress.`,
     technos: ['HTML', 'CSS', 'JavaScript', 'Wordpress'],
     link: 'https://pastitaliaus.com'
   },
   {
     name: 'Busterwood',
     image: 'busterwood.webp',
-    description: `A creative website that presents what Busterwood
-        is all about and what they do.`,
-    accurateDescription: `A creative website that presents Busterwood as a creative agency that specializes
-        in branding, web design, and digital marketing. The website is built with
-        HTML, CSS, and JavaScript.`,
+    description: `Site créatif qui présente l'identité et les activités de Busterwood.`,
+    accurateDescription: `Site créatif présentant Busterwood, agence spécialisée en branding, web design et marketing digital. Réalisé en HTML, CSS et JavaScript.`,
     technos: ['HTML', 'CSS', 'JavaScript'],
     link: 'https://busterwood.com'
   },
   {
     name: 'Road To The Main Stage By Firestone',
     image: 'firestone.webp',
-    description: 'The website of the road to the main stage by Firestone event of 2024.',
-    accurateDescription: `Road to the Main Stage is an event organized by Firestone in partnership with Deezer,
-      giving upcoming artists the opportunity to perform on major stages.
-
-      The website is built with WordPress, featuring custom CSS to match the brand's identity
-      and responsive design. I worked on two editions of this project, handling maintenance,
-      updates, and visual customizations.`,
+    description: `Site officiel de l'événement Road to the Main Stage by Firestone, édition 2024.`,
+    accurateDescription: `Road to the Main Stage est un événement organisé par Firestone en partenariat avec Deezer, offrant à des artistes émergents la chance de se produire sur de grandes scènes.\n\nSite réalisé sous WordPress avec du CSS personnalisé pour coller à l'identité de la marque. J'ai travaillé sur deux éditions, en assurant la maintenance, les mises à jour et les personnalisations visuelles.`,
     technos: ['wordpress', 'CSS'],
     link: 'https://roadtothemainstagebyfirestone.withdeezer.com/fr/'
   },
   {
     name: 'Weather App',
     image: 'weather.webp',
-    description: `A simple weather application that provides
-        current weather information based on provided location name.`,
+    description: `Application météo simple affichant les conditions actuelles selon une ville saisie.`,
     technos: ['HTML', 'CSS', 'JavaScript', 'React', 'OpenWeatherMap API'],
     link: 'https://weather-app-react-night.vercel.app/',
     github: 'https://github.com/YannG75/weather-app-react'
@@ -85,8 +73,7 @@ const works = ref<Work[]>([
   {
     name: 'todoApp',
     image: 'todo.webp',
-    description: `A simple todo application that allows you to
-        create, edit, delete tasks and mark them as completed.`,
+    description: `Application de gestion de tâches : création, édition, suppression et marquage comme complété.`,
     technos: ['HTML', 'CSS', 'JavaScript', 'React'],
     link: 'https://todo-app-react-violet.vercel.app/',
     github: 'https://github.com/YannG75/TodoApp-React'
@@ -97,7 +84,7 @@ const works = ref<Work[]>([
 <template>
   <section id="works" class="w-full min-h-screen flex flex-col items-center justify-center">
     <div class="w-full flex flex-col items-start justify-center">
-      <h2 class="text-xl ml-4 sm:ml-[6%] font-['Sora_Variable'] font-thin text-gray-400 mb-5">My works</h2>
+      <h2 class="text-xl ml-4 sm:ml-[6%] font-['Sora_Variable'] font-thin text-gray-400 mb-5">Mes projets</h2>
       <article class="flex flex-col items-start w-full">
         <div
             v-for="work in works"
@@ -127,7 +114,7 @@ const works = ref<Work[]>([
           <div v-if="clicked == work.name" class="flex gap-4 sm:gap-8 md:gap-5 z-10 justify-center items-center">
             <a
                 class="bg-[#E5E5E5] font-['Sora_Variable'] text-[#545454] text-sm sm:text-base px-4 sm:px-5 py-2 rounded-md shadow-xl "
-                :href="work.link" target="_blank">check it out</a>
+                :href="work.link" target="_blank">Voir le projet</a>
             <a
                 v-if="work.github"
                 class="bg-[#E5E5E5] text-[#545454] px-4 sm:px-5 py-1 rounded-md shadow-xl"
