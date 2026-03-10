@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     },
     compatibilityDate: '2025-07-15',
     devtools: {enabled: true},
-    modules: ['@nuxt/eslint', '@nuxt/image', '@nuxtjs/sitemap'],
+    modules: ['@nuxt/eslint', '@nuxt/image', '@nuxtjs/sitemap','@vercel/analytics'],
     site: {
         url: 'https://yanng.xyz',
         name: 'Yann Grillon — Développeur Frontend Freelance',
