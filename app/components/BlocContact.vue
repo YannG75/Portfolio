@@ -13,12 +13,11 @@ defineProps({
 const emit = defineEmits(['update:hovered', 'update:hided'])
 
 // Refs pour les paragraphes du motto
-const mottoLine1 = ref<HTMLParagraphElement | null>(null)
-const mottoLine2 = ref<HTMLParagraphElement | null>(null)
-const mottoLine3 = ref<HTMLParagraphElement | null>(null)
+const talkLine1 = ref<HTMLParagraphElement | null>(null)
+const talkLine2 = ref<HTMLParagraphElement | null>(null)
 
 onMounted(() => {
-  const lines = [mottoLine1.value, mottoLine2.value, mottoLine3.value]
+  const lines = [talkLine1.value,talkLine2.value]
 
   lines.forEach((line) => {
     if (line) {
@@ -32,8 +31,8 @@ onMounted(() => {
             ease: 'power2.out',
             scrollTrigger: {
               trigger: line,
-              start: 'top 50%',
-              end: 'top 35%',
+              start: 'top 60%',
+              end: 'top 40%',
               scrub: 1,
               toggleActions: 'play none none reverse'
             }
@@ -51,22 +50,10 @@ onBeforeUnmount(() => {
 <template>
   <section id="contact" class="w-full min-h-screen 2xl:min-h-[70vh] flex flex-col items-center justify-center">
     <div class="w-full px-4 sm:px-6 md:w-[70%] flex flex-col items-center justify-center mb-20">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-400 mb-10">Ma devise</h2>
-      <p
-          ref="mottoLine1"
-          class="text-gradient-scroll font-bold text-2xl sm:text-3xl md:text-5xl leading-snug w-full sm:w-[90%] text-center">
-        Je fais ce que je sais,
-      </p>
-      <p
-          ref="mottoLine2"
-          class="text-gradient-scroll font-bold text-2xl sm:text-3xl md:text-5xl leading-snug w-full sm:w-[90%] text-center">
-        et
-      </p>
-      <p
-          ref="mottoLine3"
-          class="text-gradient-scroll font-bold text-2xl sm:text-3xl md:text-5xl leading-snug w-full sm:w-[90%] text-center">
-        j'apprends ce que je ne sais pas.
-      </p>
+      <h2 ref="talkLine1" class="text-2xl sm:text-3xl md:text-6xl font-bold text-gray-400 mb-10 text-gradient-scroll">Un projet en tête ? </h2>
+      <h3 ref="talkLine2" class="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient-scroll" >
+        Parlons-en.
+      </h3>
     </div>
     <div class="w-full flex flex-col items-center justify-center mb-20"
     >
