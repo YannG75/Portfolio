@@ -3,6 +3,7 @@ import { ref } from 'vue'
 
 interface NavigationMenuItem {
   label: string
+  anchor: string
   description: string
 }
 
@@ -15,16 +16,19 @@ const emit = defineEmits(['update:hided'])
 
 const items = ref<NavigationMenuItem[]>([
   {
-    label: 'About',
-    description: 'Learn more about me',
+    label: 'À propos',
+    anchor: 'about',
+    description: 'En savoir plus sur moi',
   },
   {
-    label: 'Works',
-    description: 'See my latest works and experience',
+    label: 'Projets',
+    anchor: 'works',
+    description: 'Voir mes derniers projets',
   },
   {
     label: 'Contact',
-    description: 'Get in touch with me',
+    anchor: 'contact',
+    description: 'Me contacter',
   },
 ])
 
@@ -32,13 +36,8 @@ const changeCursor = (hided: boolean) => {
   emit('update:hided', hided)
 }
 
-const isActive = (label: string) => {
-  const key = label.toLowerCase()
-  return (
-    (key === 'about' && props.activeSection === 'about') ||
-    (key === 'works' && props.activeSection === 'works') ||
-    (key === 'contact' && props.activeSection === 'contact')
-  )
+const isActive = (anchor: string) => {
+  return props.activeSection === anchor
 }
 </script>
 
@@ -69,16 +68,16 @@ const isActive = (label: string) => {
   >
     <a
       v-for="item in items"
-      :key="item.label"
-      :href="`#${item.label.toLowerCase()}`"
+      :key="item.anchor"
+      :href="`#${item.anchor}`"
       class="relative group px-3 sm:px-4 min-h-[30px] flex items-center"
-      :class="[isActive(item.label) ? 'bg-[rgba(0,0,0,0.2)]' : '']"
+      :class="[isActive(item.anchor) ? 'bg-[rgba(0,0,0,0.2)]' : '']"
     >
       <!-- Texte -->
       <span
         class="font-medium text-base sm:text-sm transition-colors duration-200"
         :class="[
-          isActive(item.label)
+          isActive(item.anchor)
             ? 'text-primary'
             : 'text-white',
           'group-hover:text-primary'
@@ -91,7 +90,7 @@ const isActive = (label: string) => {
       <div
         class="absolute left-0 top-1/2 -translate-y-1/2 w-1 bg-primary transition-all duration-200"
         :class="[
-          isActive(item.label) ? 'h-full' : 'h-0',
+          isActive(item.anchor) ? 'h-full' : 'h-0',
           'group-hover:h-full'
         ]"
       />

@@ -45,7 +45,7 @@ const thingsIdo = ref<Thing[]>([
   {
     name: `AR
     experiences`,
-    description: 'I can create funny AR experiences on mobile devices.'
+    description: 'Je conçois des expériences AR immersives sur mobile.'
   },
   {
     name: 'AI',
@@ -95,7 +95,7 @@ function buildTimeline() {
 
 onMounted(() => {
   const paragraphs = [aboutP1.value, aboutP2.value, aboutP3.value]
-    .filter((p): p is HTMLParagraphElement => p !== null)
+      .filter((p): p is HTMLParagraphElement => p !== null)
 
   if (!paragraphs.length) return
 
@@ -125,9 +125,19 @@ onBeforeUnmount(() => {
       class="w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black from-1% to-transparent bg-blur-sm mb-20 2xl:mb-0">
     <div ref="aboutContainer" class="w-full px-4 sm:px-6 md:w-[90%] flex flex-col items-start justify-center mb-20">
       <h2 class="text-xl font-thin font-['Sora_Variable'] text-gray-400 mb-5">ABOUT ME</h2>
-      <p ref="aboutP1" class="text-gradient-scroll font-bold text-2xl sm:text-3xl md:text-5xl leading-snug w-full sm:w-[90%]">I'm a web developer who loves to code and make new things.</p>
-      <p ref="aboutP2" class="text-gradient-scroll font-bold text-2xl sm:text-3xl md:text-5xl leading-snug w-full sm:w-[90%]">Since i'm lazy i try to be effective and efficient in my work and i'm always looking for new things to learn.</p>
-      <p ref="aboutP3" class="text-gradient-scroll font-bold text-2xl sm:text-3xl md:text-5xl leading-snug w-full sm:w-[90%]">I use AI to help me achieve my goals faster and better.</p>
+      <p
+          ref="aboutP1"
+          class="text-gradient-scroll font-bold text-2xl sm:text-3xl md:text-5xl leading-snug w-full sm:w-[90%]">
+        Développeur frontend avec 4 ans d'expérience en agence (Vue.js, React, Three.js, AR).</p>
+      <p
+          ref="aboutP2"
+          class="text-gradient-scroll font-bold text-2xl sm:text-3xl md:text-5xl leading-snug w-full sm:w-[90%]">Je
+        livre
+        des projets propres et performants en m'appuyant sur les meilleurs outils du moment.</p>
+      <p
+          ref="aboutP3"
+          class="text-gradient-scroll font-bold text-2xl sm:text-3xl md:text-5xl leading-snug w-full sm:w-[90%]">
+        Disponible pour missions freelance en Île-de-France et remote.</p>
     </div>
     <div class="w-full flex flex-col items-start justify-center">
       <h2 class="text-xl font-['Sora_Variable'] ml-4 sm:ml-[7%] lg:ml-[6%] font-thin text-gray-400 mb-5">WHAT I DO</h2>
@@ -140,8 +150,15 @@ onBeforeUnmount(() => {
           <div
               :class="clicked == thing.name ? 'h-full' : ''"
               class="bg-primary opacity-90 absolute w-full h-0 md:group-hover:h-full transition-[height] duration-300 z-0 ease-in-out"/>
-          <h3 class="font-['Sora_Variable'] font-black ml-10 sm:ml-[7%] md:ml-[15%] lg:ml-[6%] text-3xl sm:text-4xl md:text-5xl lg:whitespace-pre-line z-10 w-full lg:w-1/3">
-            {{ thing.name }}</h3>
+          <div
+              class="flex items-center justify-between w-full lg:w-1/3 z-10 ml-4 sm:ml-[7%] md:ml-[15%] lg:ml-[6%] pr-6 sm:pr-8 lg:pr-0">
+            <h3 class="font-['Sora_Variable'] font-black text-3xl sm:text-4xl md:text-5xl lg:whitespace-pre-line">
+              {{ thing.name }}
+            </h3>
+            <span
+                class="lg:hidden text-2xl sm:text-3xl font-thin text-gray-400 transition-transform duration-300 select-none"
+                :class="clicked === thing.name ? 'rotate-45' : ''">+</span>
+          </div>
           <p
               :class="clicked == thing.name ? 'visible' : ''"
               class="text-left  lg:text-right text-sm sm:text-base text-[#E5E5E5] break-after-auto ml-5 sm:ml-[10%] md:ml-[15%] lg:mr-[15%] w-[92%] md:w-full lg:w-1/4 invisible sm:group-hover:visible sm:group-focus:visible z-10">

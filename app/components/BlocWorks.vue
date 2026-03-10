@@ -111,13 +111,16 @@ const works = ref<Work[]>([
               :class="clicked == work.name ? 'h-full' : 'bg-primary'"
               class="opacity-90 absolute w-full h-0 lg:group-hover:h-full transition-[height] duration-300 z-0 ease-in-out"
           />
-          <h3
-              :class="clicked == work.name ? '!ml-0' : '' "
-              class="font-['Sora_Variable'] z-10 font-black text-3xl sm:text-4xl md:text-6xl ml-4 sm:ml-[6%] whitespace-pre-line">
-            {{ work.name }}
-          </h3>
+          <div
+              :class="clicked == work.name ? '!ml-0 text-center' : ''"
+              class="flex flex-col ml-4 sm:ml-[6%] z-10">
+            <h3 class="font-['Sora_Variable'] font-black text-3xl sm:text-4xl md:text-6xl whitespace-pre-line">
+              {{ work.name }}
+            </h3>
+            <span v-if="clicked !== work.name" class="text-xs text-gray-400 mt-1 tracking-wide">↗ Voir plus</span>
+          </div>
           <p
-              :class="clicked == work.name ? 'visible !mr-0 !text-center' : '' "
+              :class="clicked == work.name ? 'visible !mr-0 !text-center max-w-[90%]' : '' "
               class="text-right z-10 mr-4 sm:mr-[10%] md:mr-[15%] text-sm sm:text-base text-[#E5E5E5] whitespace-pre-line invisible lg:group-hover:visible">
             {{ clicked == work.name && work.accurateDescription ? work.accurateDescription : work.description }}
           </p>
