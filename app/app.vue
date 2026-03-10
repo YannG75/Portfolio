@@ -8,6 +8,7 @@ import BlocAboutMe from '~/components/BlocAboutMe.vue'
 import BlocWorks from '~/components/BlocWorks.vue'
 import BlocContact from '~/components/BlocContact.vue'
 import FirefliesBackground from '~/components/FirefliesBackground.vue'
+import { Analytics } from '@vercel/analytics/nuxt'
 
 useHead({
   title: 'Yann\'s Portfolio',
@@ -100,6 +101,7 @@ onBeforeUnmount(() => {
 
 <template>
   <!-- Lucioles en arrière-plan -->
+  <Analytics />
   <FirefliesBackground/>
 
   <main
