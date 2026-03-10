@@ -51,21 +51,21 @@ onBeforeUnmount(() => {
 <template>
   <section id="contact" class="w-full min-h-screen 2xl:min-h-[70vh] flex flex-col items-center justify-center">
     <div class="w-full px-4 sm:px-6 md:w-[70%] flex flex-col items-center justify-center mb-20">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-400 mb-10">My motto</h2>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-400 mb-10">Ma devise</h2>
       <p
           ref="mottoLine1"
           class="text-gradient-scroll font-bold text-2xl sm:text-3xl md:text-5xl leading-snug w-full sm:w-[90%] text-center">
-        I Do what I know
+        Je fais ce que je sais,
       </p>
       <p
           ref="mottoLine2"
           class="text-gradient-scroll font-bold text-2xl sm:text-3xl md:text-5xl leading-snug w-full sm:w-[90%] text-center">
-        and
+        et
       </p>
       <p
           ref="mottoLine3"
           class="text-gradient-scroll font-bold text-2xl sm:text-3xl md:text-5xl leading-snug w-full sm:w-[90%] text-center">
-        I learn what I don't.
+        j'apprends ce que je ne sais pas.
       </p>
     </div>
     <div class="w-full flex flex-col items-center justify-center mb-20"
@@ -81,27 +81,26 @@ onBeforeUnmount(() => {
         <h2
             class="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient-hover"
             @mouseover="emit('update:hided', true)" @mouseleave="emit('update:hided', false)"
-        >Check out my little Game</h2>
+        >Voir mon petit jeu</h2>
       </a>
 
     </div>
 
 
-    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-400 mb-10 text-center px-4">Feel free to reach out
-      to me</h2>
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-400 mb-10 text-center px-4">Contactez-moi</h2>
     <div
         class="w-full px-4 sm:px-6 md:w-[70%] flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 md:gap-20">
 
       <article
           class="flex flex-col items-center justify-center w-fit relative group"
           @mouseover="emit('update:hided', true)" @mouseleave="emit('update:hided', false)">
-        <span class="z-1 text-bold text-gradient-hover text-base sm:text-lg">Email</span>
+        <span class="z-1 text-bold text-gradient-hover text-base sm:text-lg">E-mail</span>
         <a href="mailto:yannalxr@gmail.com" class="z-1 text-gradient-hover text-sm sm:text-base">yannalxr@gmail.com</a>
       </article>
       <article
           class="relative flex flex-col items-center justify-center w-fit group"
           @mouseover="emit('update:hided', true)" @mouseleave="emit('update:hided', false)">
-        <span class="text-bold z-1 text-gradient-hover text-base sm:text-lg">Phone</span>
+        <span class="text-bold z-1 text-gradient-hover text-base sm:text-lg">Téléphone</span>
         <a href="tel:+33645693436" class="z-1 text-gradient-hover text-sm sm:text-base">+33 6 45 69 34 36</a>
       </article>
     </div>
