@@ -84,12 +84,6 @@ onBeforeUnmount(() => {
         <span class="z-1 text-bold text-gradient-hover text-base sm:text-lg">E-mail</span>
         <a href="mailto:yannalxr@gmail.com" class="z-1 text-gradient-hover text-sm sm:text-base">yannalxr@gmail.com</a>
       </article>
-      <article
-          class="relative flex flex-col items-center justify-center w-fit group"
-          @mouseover="emit('update:hided', true)" @mouseleave="emit('update:hided', false)">
-        <span class="text-bold z-1 text-gradient-hover text-base sm:text-lg">Téléphone</span>
-        <a href="tel:+33645693436" class="z-1 text-gradient-hover text-sm sm:text-base">+33 6 45 69 34 36</a>
-      </article>
     </div>
     <article class="relative flex items-center justify-center w-full gap-6 group mt-10 mb-10">
       <a
