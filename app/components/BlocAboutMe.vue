@@ -92,7 +92,9 @@ function buildTimeline() {
   }
 }
 
-onMounted(() => {
+onMounted(async () => {
+  await document.fonts.ready
+
   const paragraphs = [aboutP1.value, aboutP2.value, aboutP3.value]
       .filter((p): p is HTMLParagraphElement => p !== null)
 

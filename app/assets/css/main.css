@@ -1,7 +1,6 @@
 @import '@fontsource-variable/inter';
 @import '@fontsource-variable/sora';
 @import "tailwindcss";
-@import "@nuxt/ui";
 
 @layer base {
     html {
@@ -24,6 +23,7 @@
 }
 
 @theme {
+    --color-primary: var(--color-purple-700);
     --color-purpy: radial-gradient(125% 125% at 50% 90%, #000000 40%, #2b092b 100%);
     --color-purpy-light: radial-gradient(125% 125% at 50% 90%, #eaeaea 40%, #7a1b7a 100%);
 }

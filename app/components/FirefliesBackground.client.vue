@@ -10,7 +10,7 @@ const getNumberOfFireflies = () => {
   return window.innerWidth > 768 ? 20 : 5
 }
 
-const createFirefly = (index: number) => {
+const createFirefly = () => {
   const firefly = document.createElement('div')
   firefly.className = 'firefly'
 
@@ -77,7 +77,7 @@ const initFireflies = () => {
   // Créer et animer les lucioles avec nombre adapté à l'écran
   const numberOfFireflies = getNumberOfFireflies()
   for (let i = 0; i < numberOfFireflies; i++) {
-    const firefly = createFirefly(i)
+    const firefly = createFirefly()
     fireflies.value.push(firefly)
     firefliesContainer.value.appendChild(firefly)
 

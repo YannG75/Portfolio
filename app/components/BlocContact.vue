@@ -92,7 +92,7 @@ onBeforeUnmount(() => {
           target="_blank"
           @mouseover="emit('update:hided', true)"
           @mouseleave="emit('update:hided', false)">
-        <NuxtImg src="/assets/icons/linkedin.svg" alt="github logo" class="w-5 h-5 sm:w-6 sm:h-6"/>
+        <NuxtImg src="/assets/icons/linkedin.svg" alt="LinkdIn logo" class="w-5 h-5 sm:w-6 sm:h-6"/>
       </a>
     </article>
   </section>

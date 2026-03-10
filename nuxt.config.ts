@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     app: {
         head: {
             htmlAttrs: {
-                lang: 'en',
+                lang: 'fr',
             },
             link: [
                 { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -15,10 +15,10 @@ export default defineNuxtConfig({
     },
     compatibilityDate: '2025-07-15',
     devtools: {enabled: true},
-    modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui','@nuxtjs/sitemap'],
+    modules: ['@nuxt/eslint', '@nuxt/image', '@nuxtjs/sitemap'],
     site: {
         url: 'https://yanng.xyz',
-        name: 'Yann\'s Portfolio',
+        name: 'Yann Grillon — Développeur Frontend Freelance',
     },
     css: ['~/assets/css/main.css'],
     vite: {

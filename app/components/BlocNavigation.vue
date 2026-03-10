@@ -48,7 +48,7 @@ const isActive = (anchor: string) => {
     @mouseenter="changeCursor(true)"
     @mouseleave="changeCursor(false)"
   >
-    <nuxt-link :to="{hash:'#hero'}" :external="true" class="flex items-center justify-center cursor-none">
+    <a href="#hero" class="flex items-center justify-center cursor-none">
       <NuxtImg
         src="/assets/images/logoPMini.png"
         alt="Logo"
@@ -57,7 +57,7 @@ const isActive = (anchor: string) => {
         width="48"
         height="48"
       />
-    </nuxt-link>
+    </a>
   </div>
 
   <!-- BlocNavigation -->

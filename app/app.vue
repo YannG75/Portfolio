@@ -7,22 +7,43 @@ import BlocHero from '~/components/BlocHero.vue'
 import BlocAboutMe from '~/components/BlocAboutMe.vue'
 import BlocWorks from '~/components/BlocWorks.vue'
 import BlocContact from '~/components/BlocContact.vue'
-import FirefliesBackground from '~/components/FirefliesBackground.vue'
-import { Analytics } from '@vercel/analytics/nuxt'
+import FirefliesBackground from '~/components/FirefliesBackground.client.vue'
 
 useHead({
-  title: 'Yann\'s Portfolio',
-  htmlAttrs: {
-    lang: 'en'
-  },
+  title: 'Yann Grillon — Développeur Frontend Freelance',
+  htmlAttrs: { lang: 'fr' },
   meta: [
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { name: 'description', content: 'Développeur frontend freelance spécialisé en Vue.js, React et TypeScript. Projets propres et performants. Disponible en Île-de-France et remote.' },
+    { name: 'author', content: 'Yann Grillon' },
+    // Open Graph
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: 'https://yanng.xyz' },
+    { property: 'og:title', content: 'Yann Grillon — Développeur Frontend Freelance' },
+    { property: 'og:description', content: 'Développeur frontend freelance spécialisé en Vue.js, React et TypeScript. Disponible en Île-de-France et remote.' },
+    { property: 'og:image', content: 'https://yanng.xyz/og-image.jpg' },
+    { property: 'og:locale', content: 'fr_FR' },
+    // Twitter / X
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: 'Yann Grillon — Développeur Frontend Freelance' },
+    { name: 'twitter:description', content: 'Développeur frontend freelance spécialisé en Vue.js, React et TypeScript.' },
+    { name: 'twitter:image', content: 'https://yanng.xyz/og-image.jpg' },
+  ],
+  script: [
     {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1',
-    },
-    {
-      name: 'description',
-      content: 'This is my amazing portfolio, where i share my project and some things about me',
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'Yann Grillon',
+        url: 'https://yanng.xyz',
+        jobTitle: 'Développeur Frontend Freelance',
+        description: 'Développeur frontend avec 4 ans d\'expérience en agence. Spécialisé en Vue.js, React, TypeScript. Disponible en Île-de-France et remote.',
+        knowsAbout: ['Vue.js', 'React', 'TypeScript', 'Three.js', 'GSAP', 'Nuxt', 'HTML', 'CSS'],
+        email: 'yannalxr@gmail.com',
+        sameAs: ['https://www.linkedin.com/in/yann-grillon/'],
+        areaServed: ['Île-de-France', 'Remote'],
+      })
     }
   ]
 })
@@ -100,8 +121,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <!-- Lucioles en arrière-plan -->
-  <Analytics />
+  <!-- Lucioles en arrière-plan (client-only via .client.vue) -->
   <FirefliesBackground/>
 
   <main
@@ -170,7 +190,7 @@ onBeforeUnmount(() => {
 
     <article class="fixed z-20 left-[50%] translate-x-[-50%] bottom-5 flex flex-col lg:invisible items-center justify-center min-w-10 min-h-10 bg-blur-sm" >
       <NuxtImg src="assets/icons/touch.svg" alt="tap things" class="w-8 h-8 md:w-12 md:h-12 mt-2 animate-pulse"/>
-      <span class="text-xs md:text-sm text-center animate-pulse">tap things</span>
+      <span class="text-xs md:text-sm text-center animate-pulse">explorez</span>
     </article>
   </main>
 </template>
