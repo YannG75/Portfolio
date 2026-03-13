@@ -19,7 +19,7 @@ const emit = defineEmits(['update:hovered'])
         @mouseover="emit('update:hovered', true)"
         @mouseout="emit('update:hovered', false)"
       >
-        <span class="">Développeur Frontend Freelance</span>
+        <span class="">Développeur Frontend </span>
       </p>
       <p class="text-gray-300 text-base sm:text-lg md:text-xl mt-5 text-center md:text-left max-w-md">
         Je conçois des sites et interfaces web modernes — React, Vue.js, TypeScript.
